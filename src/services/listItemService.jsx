@@ -15,7 +15,7 @@ export default class ListItemService {
     try {
       const requests = listItems.map((item) => fetch(item.url));
       const responses = await Promise.all(requests);
-      const dataApi = await Promise.all(responses.map((resp) => resp.json()));
+      const dataApi = await Promise.all(responses?.map((resp) => resp.json()));
       return dataApi;
     } catch (e) {
       console.log(e);

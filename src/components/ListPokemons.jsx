@@ -27,9 +27,9 @@ const ListPokemons = () => {
       </div>
       <div className="search">
         <input
-          className="buscador"
+          className="search"
           type="text"
-          placeholder="Buscar  pokemon"
+          placeholder="Write the name of the pokemon..."
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
@@ -37,11 +37,11 @@ const ListPokemons = () => {
         {searchPokemon?.map((item) => {
           return (
             <>
-              <div className="listOfPokemons">
+              <div key={item.id} className="listOfPokemons">
                 <span>{item?.name}</span>
                 <img src={item?.sprites?.front_default} alt="" />
-                {/* <Link to={"/info/" + item.id}> */}
-                <button> More information </button>
+                {/* <Link to={"/info/" + item.id} infoPoke={item}> */}
+                  <button> More information </button>
                 {/* </Link> */}
               </div>
             </>

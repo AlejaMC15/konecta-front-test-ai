@@ -1,6 +1,8 @@
 import React from "react";
 
-const InfoPokemons = () => {
+const InfoPokemons = ({info}) => {
+
+    console.log(info, "prueba 3")
     return (
         <>Hola</>
     )
