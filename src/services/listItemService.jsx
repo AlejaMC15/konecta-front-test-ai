@@ -1,7 +1,6 @@
 import { ConfigService } from './config';
-
 export default class ListItemService {
-
+    static dataApi = []
     static urlBase = ConfigService.urlBase;
 
 
@@ -15,8 +14,17 @@ export default class ListItemService {
         }
 
     }
-    static ListUrl = async () => {
+    static ListUrl = async (listItems) => {
+        const dataApi = []
+
         try {
+            listItems.map(async (item) => {
+
+                const response = await fetch(item.url);
+
+                dataApi.push(response);
+                return  dataApi;
+            })
 
         } catch (e) {
             console.log(e);

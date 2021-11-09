@@ -3,13 +3,13 @@ import ListItemContext from '../context/listItemContext'
 
 import imgTitle from '../img/pokemon.png';
 
-
 import '../App.css'
 
 const ListPokemons = () => {
 
-    const {listItems} = useContext(ListItemContext);
-console.log(listItems, 'hola');
+    const {listItems, listOfPokemons } = useContext(ListItemContext);
+  
+console.log(listItems, listOfPokemons, 'hola');
     return (
         <>
             <div className="title">
