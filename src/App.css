@@ -1,5 +1,5 @@
-* {
-  background-color: 	#FFA500;
+.body {
+  background-color: aqua;
 }
 
 .title {
@@ -13,4 +13,27 @@
 
 .containerListPokemons {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
+
+.listOfPokemons {
+  background-color: white;
+  border-radius: 5px;
+  margin: 1%;
+  display: inline-grid;
+  text-align: center;
+  text-transform: uppercase;
+  width: 15%;
+  justify-content: center;
+}
+
+.listOfPokemons {
+  overflow: hidden;
+}
+
+.listOfPokemons:hover {
+  transform:scale(1.2);
+}
+
