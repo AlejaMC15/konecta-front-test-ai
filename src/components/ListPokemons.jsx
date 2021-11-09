@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import ListItemContext from "../context/listItemContext";
+/* import { Link } from "react-router-dom"; */
 
 import imgTitle from "../img/pokemon.png";
 
@@ -39,6 +40,9 @@ const ListPokemons = () => {
               <div className="listOfPokemons">
                 <span>{item?.name}</span>
                 <img src={item?.sprites?.front_default} alt="" />
+                {/* <Link to={"/info/" + item.id}> */}
+                <button> More information </button>
+                {/* </Link> */}
               </div>
             </>
           );
