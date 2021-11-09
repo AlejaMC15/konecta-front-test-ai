@@ -27,6 +27,7 @@
   text-transform: uppercase;
   width: 15%;
   justify-content: center;
+  padding: 2% 0;
 }
 
 .listOfPokemons {
@@ -34,6 +35,18 @@
 }
 
 .listOfPokemons:hover {
-  transform:scale(1.2);
+  transform: scale(1.2);
 }
 
+.search {
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+}
+
+.search input {
+  padding: 1%;
+  border-radius: 5px;
+  width: 50%;
+  border-color: transparent;
+}
