@@ -1,38 +1,36 @@
 import React, { useContext } from "react";
-import ListItemContext from '../context/listItemContext'
+import ListItemContext from "../context/listItemContext";
 
-import imgTitle from '../img/pokemon.png';
+import imgTitle from "../img/pokemon.png";
 
-import '../App.css'
+import "../App.css";
 
 const ListPokemons = () => {
+  const { listItems, listOfPokemons } = useContext(ListItemContext);
 
-    const {listItems, listOfPokemons } = useContext(ListItemContext);
+  console.log(listItems, listOfPokemons, "hola");
   
-console.log(listItems, listOfPokemons, 'hola');
-    return (
-        <>
-            <div className="title">
-                <img src={imgTitle} alt="" />
-            </div>
-            <div className="search">
+  return (
+    <>
+      <div className="title">
+        <img src={imgTitle} alt="" />
+      </div>
+      <div className="search"></div>
 
-            </div>
-
-            {/* {getPokemons?.length > 0 && getPokemons?.map((item, index) => {
+      {/* {getPokemons?.length > 0 && getPokemons?.map((item, index) => {
                
                 console.log(item, "hola 2")
                 return ( */}
-            <div /* key={index} */ className="containerListPokemons">
-                <div className="listOfPokemons">
-                    <span>Name: {/*  {getPokemons.name} */}</span>
-                    {/*  <img src={getPokemons.sprites.front_default} alt="" /> */}
-                </div>
-            </div>
-            {/* )
+      <div /* key={index} */ className="containerListPokemons">
+        <div className="listOfPokemons">
+          <span>Name: {/*  {getPokemons.name} */}</span>
+          {/*  <img src={getPokemons.sprites.front_default} alt="" /> */}
+        </div>
+      </div>
+      {/* )
             })} */}
-        </>
-    );
-}
+    </>
+  );
+};
 
 export default ListPokemons;
