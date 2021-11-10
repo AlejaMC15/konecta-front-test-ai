@@ -21,7 +21,7 @@
   display: inline-grid;
   text-align: center;
   text-transform: uppercase;
-  width: 15%;
+  width: 20%;
   justify-content: center;
   padding: 2% 0;
   box-shadow: 5px 5px 10px black;
@@ -32,7 +32,7 @@
 }
 
 .listOfPokemons:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .listOfPokemons button {
@@ -41,6 +41,7 @@
   height: 30px;
   border-color: transparent;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .listOfPokemons span {

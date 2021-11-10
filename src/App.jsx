@@ -1,8 +1,8 @@
 import { ListItemsProvider } from "./context/listItemContext";
 import { UseList } from "./hooks/useList";
-/* import { BrowserRouter, Routes, Route } from "react-router-dom"; */
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ListPokemons from "./components/ListPokemons";
-/* import InfoPokemons from "./components/InfoPokemons"; */
+import InfoPokemons from "./components/InfoPokemons";
 
 const App = () => {
   const { listItems, listOfPokemons } = UseList();
@@ -10,13 +10,12 @@ const App = () => {
   return (
     <>
       <ListItemsProvider value={{ listItems, listOfPokemons }}>
-        <ListPokemons />
-        {/* <BrowserRouter>
-          <Routes> */}
-            {/* <Route exact path="/info/:pokeId" component={InfoPokemons} /> */}
-            {/* <Route exact path="/" component={ListPokemons} /> */}
-         {/*  </Routes>
-        </BrowserRouter> */}
+        <Router>
+          <Routes>
+            <Route path="/" element={<ListPokemons />} />
+            <Route path="/info/:pokeId" element={<InfoPokemons />} />
+          </Routes>
+        </Router>
       </ListItemsProvider>
     </>
   );

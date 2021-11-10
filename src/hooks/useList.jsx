@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ListItemService from "../services/listItemService";
+import { ListItems, ListUrl } from "../services/listItemService";
 
 export const UseList = () => {
   const [listItems, setListItems] = useState();
@@ -8,7 +8,7 @@ export const UseList = () => {
 
   const getListItems = async () => {
     try {
-      const data = await ListItemService.ListItems();
+      const data = await ListItems();
       setListItems(data.results);
       setLoadPokes(true);
     } catch (err) {
@@ -23,7 +23,7 @@ export const UseList = () => {
   useEffect(() => {
     const getUrlItems = async () => {
       try {
-        const data = await ListItemService.ListUrl(listItems);
+        const data = await ListUrl(listItems);
         setListOfPokemons(data);
       } catch (err) {
         console.log(err);
@@ -31,9 +31,9 @@ export const UseList = () => {
     };
     getUrlItems();
   }, [listItems, loadPokes]);
-
+ 
   return {
     listItems,
-    listOfPokemons,
+    listOfPokemons
   };
 };
