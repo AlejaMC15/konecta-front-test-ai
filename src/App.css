@@ -48,6 +48,10 @@
   font-weight: bold;
 }
 
+.listOfPokemons img {
+  image-rendering: pixelated;
+}
+
 .search {
   display: flex;
   justify-content: center;
@@ -88,6 +92,8 @@
 
 .containerInfo img {
   width: 250px;
+  image-rendering: pixelated;
+  
 }
 .containerInfo img:hover {
   position: relative;
@@ -144,7 +150,7 @@ hr {
 }
 
 .containerInfo span {
-  text-shadow: 3px 3px 5px black;
+  text-shadow: 1px 1px 3px black;
 }
 
 .paginator {
@@ -156,11 +162,29 @@ hr {
 .paginator .btn {
   padding: 0.5%;
   border-radius: 2px;
-  background-color:	#8B0000;
+  background-color:white;
   color: #ff7f50;
   margin: 1%;
   text-decoration: none;
   border-color: transparent;
   width: 8%;
   justify-content: center;
+  font-weight: bold;
 }
+
+h1 {
+  overflow: hidden;
+}
+
+.namePoke {
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+  
+  @keyframes slidein {
+    75% {
+      font-size: 100%;
+      margin-left: 20%;
+      width: 100%;
+    }
+  }

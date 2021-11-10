@@ -12,7 +12,7 @@ const InfoPokemons = () => {
       {from ? (
         <div className="containerInfo">
           <h1>
-            Characteristics of <span>{from.item?.name}</span>
+            Characteristics of <span className="namePoke">{from.item?.name}</span>
           </h1>
           <hr />
           <div className="containerAppearence">
