@@ -11,7 +11,6 @@ const ListPokemons = () => {
 
   const [searchPokemon, setSearchPokemon] = useState();
   const [search, setSearch] = useState("");
-  console.log('los url',listItems);
 
   const nextPage = () => {
     getListItems(listItems.next);
