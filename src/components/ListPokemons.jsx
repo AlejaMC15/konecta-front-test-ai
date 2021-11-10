@@ -7,11 +7,18 @@ import imgTitle from "../img/pokemon.png";
 import "../App.css";
 
 const ListPokemons = () => {
-  const { listOfPokemons/* , pagination */ } = useContext(ListItemContext);
+  const { listItems, listOfPokemons,getListItems } = useContext(ListItemContext);
 
   const [searchPokemon, setSearchPokemon] = useState();
   const [search, setSearch] = useState("");
+  console.log('los url',listItems);
 
+  const nextPage = () => {
+    getListItems(listItems.next);
+  }
+  const previusPage = () => {
+    getListItems(listItems.previous);
+  }
   useEffect(() => {
     setSearchPokemon(
       listOfPokemons?.filter((pokemon) =>
@@ -20,13 +27,6 @@ const ListPokemons = () => {
     );
   }, [search, listOfPokemons]);
 
-/* const nextPage = () => {
-  fetch(pagination.next)
-  .then(response => response.json())
-  .then(data => console.log(data));
-}
-
-console.log(pagination) */
   return (
     <>
       <div className="title">
@@ -41,10 +41,10 @@ console.log(pagination) */
         />
       </div>
       <div className="containerListPokemons">
-        {searchPokemon?.map((item) => {
+        {searchPokemon?.map((item, index) => {
           return (
             <>
-              <div key={item.id} className="listOfPokemons">
+              <div key={index} className="listOfPokemons">
                 <span>{item?.name}</span>
                 {item?.sprites?.front_default ? (
                   <img src={item?.sprites?.front_default} alt="" />
@@ -55,14 +55,14 @@ console.log(pagination) */
                   <button> More information </button>
                 </Link>
               </div>
-            </>
+            </> //perame 2 mn yo me despido o me hago la marica :'( listooooo weno
           );
         })
         }
       </div>
       <div className="paginator">
-        <button className="btn" /* onClick={nextPage} */>Next</button>
-        <button className="btn" >Previous</button>
+      <button className="btn" onClick={previusPage} >Previous</button>
+        <button className="btn" onClick={nextPage}>Next</button>
       </div>
     </>
   );
