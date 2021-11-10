@@ -13,7 +13,7 @@ const App = () => {
         <Router>
           <Routes>
             <Route path="/" element={<ListPokemons />} />
-            <Route path="/info/:pokeId" element={<InfoPokemons />} />
+            <Route path="/info/:pokeId" element={<InfoPokemons/>}  />
           </Routes>
         </Router>
       </ListItemsProvider>

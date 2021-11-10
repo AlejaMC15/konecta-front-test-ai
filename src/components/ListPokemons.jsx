@@ -40,7 +40,7 @@ const ListPokemons = () => {
               <div key={item.id} className="listOfPokemons">
                 <span>{item?.name}</span>
                 <img src={item?.sprites?.front_default} alt="" />
-                  <Link to={"/info/" + item.id} >
+                  <Link to={"/info/" + item.id} state={{from: {item}}} >
                     <button> More information </button>
                   </Link>
               </div>
@@ -48,6 +48,10 @@ const ListPokemons = () => {
           );
         })}
       </div>
+      <div className="paginator">
+          <a href="...">Next</a>
+          <a href="...">Previous</a>
+        </div>
     </>
   );
 };
