@@ -5,11 +5,13 @@ export const UseList = () => {
   const [listItems, setListItems] = useState();
   const [listOfPokemons, setListOfPokemons] = useState();
   const [loadPokes, setLoadPokes] = useState(false);
+  const [ pagination, setPagination] = useState(null)
 
   const getListItems = async () => {
     try {
       const data = await ListItems();
       setListItems(data.results);
+      setPagination(data);
       setLoadPokes(true);
     } catch (err) {
       console.log(err);
@@ -31,9 +33,10 @@ export const UseList = () => {
     };
     getUrlItems();
   }, [listItems, loadPokes]);
- 
+
   return {
     listItems,
-    listOfPokemons
+    listOfPokemons,
+    pagination
   };
 };

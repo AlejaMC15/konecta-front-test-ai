@@ -5,15 +5,15 @@ import ListPokemons from "./components/ListPokemons";
 import InfoPokemons from "./components/InfoPokemons";
 
 const App = () => {
-  const { listItems, listOfPokemons } = UseList();
+  const { listItems, listOfPokemons, pagination } = UseList();
 
   return (
     <>
-      <ListItemsProvider value={{ listItems, listOfPokemons }}>
+      <ListItemsProvider value={{ listItems, listOfPokemons, pagination }}>
         <Router>
           <Routes>
             <Route path="/" element={<ListPokemons />} />
-            <Route path="/info/:pokeId" element={<InfoPokemons/>}  />
+            <Route path="/info/:pokeId" element={<InfoPokemons />} />
           </Routes>
         </Router>
       </ListItemsProvider>
