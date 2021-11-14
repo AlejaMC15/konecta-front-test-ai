@@ -54,7 +54,7 @@ const ListPokemons = () => {
                   <button> More information </button>
                 </Link>
               </div>
-            </> //perame 2 mn yo me despido o me hago la marica :'( listooooo weno
+            </>
           );
         })
         }
